@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript中this的用法 | gaoshengzi Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JavaScript中this的用法this 是 JavaScript 语言的一个关键字。
+它代表函数运作时，自动生成的一个内部对象，只能在函数内部使用。比如：123456function test() &amp;#123;    this.x = 1;&amp;#125;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript中this的用法">
+<meta property="og:url" content="http://yoursite.com/2014/10/11/JavaScript中this的用法/index.html">
+<meta property="og:site_name" content="gaoshengzi Blog">
+<meta property="og:description" content="JavaScript中this的用法this 是 JavaScript 语言的一个关键字。
+它代表函数运作时，自动生成的一个内部对象，只能在函数内部使用。比如：123456function test() &amp;#123;    this.x = 1;&amp;#125;">
+<meta property="og:updated_time" content="2016-10-19T14:19:20.701Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript中this的用法">
+<meta name="twitter:description" content="JavaScript中this的用法this 是 JavaScript 语言的一个关键字。
+它代表函数运作时，自动生成的一个内部对象，只能在函数内部使用。比如：123456function test() &amp;#123;    this.x = 1;&amp;#125;">
+  
+    <link rel="alternate" href="/atom.xml" title="gaoshengzi Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">gaoshengzi Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">永远要相信边上的人比你聪明。</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-JavaScript中this的用法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/10/11/JavaScript中this的用法/" class="article-date">
+  <time datetime="2014-10-11T15:36:08.000Z" itemprop="datePublished">2014-10-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript中this的用法
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="JavaScript中this的用法"><a href="#JavaScript中this的用法" class="headerlink" title="JavaScript中this的用法"></a>JavaScript中this的用法</h1><p>this 是 JavaScript 语言的一个关键字。</p>
+<p>它代表函数运作时，自动生成的一个内部对象，只能在函数内部使用。比如：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.x = <span class="number">1</span>;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<p>随着函数使用场合的不同，<code>this</code> 的值会发生变化。但是有一个总的原则，那就是this指的是谁，调用函数的那个对象。</p>
+<p>下面分四种情况，详细讨论 <code>this</code> 的用法:</p>
+<h2 id="情况一：纯粹的函数调用"><a href="#情况一：纯粹的函数调用" class="headerlink" title="情况一：纯粹的函数调用"></a>情况一：纯粹的函数调用</h2><p>这是函数的最通常用法，属于全局性调用，因此 <code>this</code> 就代表全局对象 Global。</p>
+<p>请看下面这段代码，它的运行结果是 1。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.x = <span class="number">1</span>;</div><div class="line"></div><div class="line">    alert(<span class="keyword">this</span>.x);</div><div class="line">&#125;</div><div class="line"></div><div class="line">test(); <span class="comment">// 1</span></div></pre></td></tr></table></figure>
+<p>为了证明 <code>this</code> 就是全局对象，我对代码做一些改变：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    </div><div class="line">    alert(<span class="keyword">this</span>.x);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">test(); <span class="comment">// 1</span></div></pre></td></tr></table></figure>
+<p>运行结果还是 1。再变一下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">var</span> x = <span class="number">1</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.x = <span class="number">0</span>;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line">test();</div><div class="line"></div><div class="line">alert(x); <span class="comment">// 0</span></div></pre></td></tr></table></figure>
+<h2 id="情况二：作为对象方法的调用"><a href="#情况二：作为对象方法的调用" class="headerlink" title="情况二：作为对象方法的调用"></a>情况二：作为对象方法的调用</h2><p>函数还可以作为某个对象的方法调用，这是 <code>this</code> 就指这个上级对象。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">    alert(<span class="keyword">this</span>.x);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> o = &#123;&#125;;</div><div class="line"></div><div class="line">o.x = <span class="number">1</span>;</div><div class="line"></div><div class="line">o.m = test;</div><div class="line"></div><div class="line">o.m(); <span class="comment">// 1</span></div></pre></td></tr></table></figure>
+<h2 id="情况三：作为构造函数调用"><a href="#情况三：作为构造函数调用" class="headerlink" title="情况三：作为构造函数调用"></a>情况三：作为构造函数调用</h2><p>所谓构造函数，就是通过这个函数生成一个新对象（object）。这时，<code>this</code> 就指这个新对象。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.x = <span class="number">1</span>;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> test();</div><div class="line"></div><div class="line">alert(o.x); <span class="comment">// 1</span></div></pre></td></tr></table></figure>
+<p>运行结果为 1，为了表明这时 <code>this</code> 不是全局对象。我对代码做一些改变：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = <span class="number">2</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">this</span>.x = <span class="number">1</span>;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> o = <span class="keyword">new</span> test();</div><div class="line"></div><div class="line">alert(x); <span class="comment">// 2</span></div></pre></td></tr></table></figure>
+<p>运行结果为 2，表明全局变量 x 的值根本没变。</p>
+<h2 id="情况四：apply调用"><a href="#情况四：apply调用" class="headerlink" title="情况四：apply调用"></a>情况四：apply调用</h2><p>apply() 是函数对象的一个方法，它的作用是改变函数的调用对象，它的第一个参数就表示改变后的调用这个函数的对象。因此，<code>this</code> 指的就是这第一个参数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> x = <span class="number">0</span>;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">test</span>(<span class="params"></span>) </span>&#123;</div><div class="line"></div><div class="line">    alert(<span class="keyword">this</span>.x);</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> o = &#123;&#125;;</div><div class="line"></div><div class="line">o.x = <span class="number">1</span>;</div><div class="line"></div><div class="line">o.m = test;</div><div class="line"></div><div class="line">o.m.apply(); <span class="comment">// 0</span></div></pre></td></tr></table></figure>
+<p>apply()的参数为空时，默认调用全局对象。因此，这时的运行结果为 0，证明 <code>this</code> 指的是全局对象。</p>
+<p>如果把最后一行代码修改为</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">o.m.apply(o); <span class="comment">//1</span></div></pre></td></tr></table></figure>
+<p>运行结果就变成了 1, 证明了这时 <code>this</code> 代表的是对象 o。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/10/11/JavaScript中this的用法/" data-id="ciuuwf0cq00058cuczaj0wdsn" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/10/12/AngularJS的模块/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          AngularJS的模块
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/10/11/科学上网/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">科学上网</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AJAX请求/">AJAX请求</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/PC端/">PC端</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/angularjs/">angularjs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/file/">file</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/html/">html</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/travis-CI/">travis_CI</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内核/">内核</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/同源/">同源</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/懒加载/">懒加载</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/模块化/">模块化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/科学上网/">科学上网</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/angularjs/" style="font-size: 10px;">angularjs</a> <a href="/tags/file/" style="font-size: 10px;">file</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/travis-CI/" style="font-size: 10px;">travis_CI</a> <a href="/tags/内核/" style="font-size: 10px;">内核</a> <a href="/tags/同源/" style="font-size: 10px;">同源</a> <a href="/tags/懒加载/" style="font-size: 10px;">懒加载</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/科学上网/" style="font-size: 10px;">科学上网</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/06/">June 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/12/">December 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/11/">November 2014</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/10/">October 2014</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/06/15/文件上传/">文件上传</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/26/travis-CI测试/">travis_CI测试</a>
+          </li>
+        
+          <li>
+            <a href="/2014/12/21/懒加载/">懒加载</a>
+          </li>
+        
+          <li>
+            <a href="/2014/11/11/浏览器内核/">浏览器内核</a>
+          </li>
+        
+          <li>
+            <a href="/2014/10/25/HTML优化技巧/">HTML优化技巧</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 gaoshengzi<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
