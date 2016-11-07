@@ -152,7 +152,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/angularjs/" style="font-size: 10px;">angularjs</a> <a href="/tags/file/" style="font-size: 10px;">file</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/travis-CI/" style="font-size: 10px;">travis_CI</a> <a href="/tags/内核/" style="font-size: 10px;">内核</a> <a href="/tags/同源/" style="font-size: 10px;">同源</a> <a href="/tags/懒加载/" style="font-size: 10px;">懒加载</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/科学上网/" style="font-size: 10px;">科学上网</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a>
+                        <a href="/tags/HTTP协议/" style="font-size: 10px;">HTTP协议</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/angularjs/" style="font-size: 10px;">angularjs</a> <a href="/tags/file/" style="font-size: 10px;">file</a> <a href="/tags/html/" style="font-size: 10px;">html</a> <a href="/tags/travis-CI/" style="font-size: 10px;">travis_CI</a> <a href="/tags/内核/" style="font-size: 10px;">内核</a> <a href="/tags/同源/" style="font-size: 10px;">同源</a> <a href="/tags/懒加载/" style="font-size: 10px;">懒加载</a> <a href="/tags/模块化/" style="font-size: 10px;">模块化</a> <a href="/tags/科学上网/" style="font-size: 10px;">科学上网</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/跨域/" style="font-size: 10px;">跨域</a>
                     </div>
                 </section>
                 
@@ -235,6 +235,68 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-HTML优化技巧" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2014/10/25/HTML优化技巧/" class="article-date">
+      <time datetime="2014-10-25T13:02:20.000Z" itemprop="datePublished">2014-10-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/10/25/HTML优化技巧/">HTML优化技巧</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h1 id="HTML-的一些优化技巧"><a href="#HTML-的一些优化技巧" class="headerlink" title="HTML 的一些优化技巧"></a>HTML 的一些优化技巧</h1><p>如何提升Web页面的性能，很多开发人员从多个方面来下手如JavaScript、图像优化、服务器配置，文件压缩或是调整CSS。</p>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/html/">html</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2014/10/25/HTML优化技巧/#more">大航海 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-模块化" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -498,77 +560,9 @@
 
 
   
-    <article id="post-AngularJS的模块" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2014/10/12/AngularJS的模块/" class="article-date">
-      <time datetime="2014-10-12T00:27:57.000Z" itemprop="datePublished">2014-10-12</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/10/12/AngularJS的模块/">AngularJS的模块</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h1 id="AngularJS的模块"><a href="#AngularJS的模块" class="headerlink" title="AngularJS的模块"></a>AngularJS的模块</h1><h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><ul>
-<li>模块定义了一个应用程序</li>
-<li>模块是应用程序中不同部分的容器</li>
-<li>模块是应用控制器的容器</li>
-<li>控制器通常属于一个模块</li>
-</ul>
-<p>ng 中模块的引入最重要的目的就是为了解决原来全局定义的控制器污染的问题，还有一个目的就是让我们以模块的形式划分架构。<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">可以通过 angular.<span class="keyword">module</span>() 方法操作模块 注意： 该方法只有在传入两个参数时才会创建模块，否则为获取已有模块</div></pre></td></tr></table></figure></p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/angularjs/">angularjs</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2014/10/12/AngularJS的模块/#more">大航海 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 </div>
